@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-react-app-service
+  namespace: my-react-app
+spec:
+  selector:
+    app: my-react-app
+  type: LoadBalancer
+  sessionAffinity: None
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  internalTrafficPolicy: Cluster
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  loadBalancerIP: 10.0.0.63

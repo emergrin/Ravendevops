@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-credentials
+  namespace: my-react-app
+type: Opaque
+stringData:
+  DB_USER: "admin"
+  DB_PASSWORD: "supersecurepassword"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: reguser
+  namespace: my-react-app
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: >-
+     MdoOIWvVEriY85D6o6q9jNOmMCeHX5dABt2bdLUVveR13jobEDvreJsCs1o37elxbVSWIv2gdW59fFDtcnOgGEIh5MU1ICxbDOb5P2bZbhMz7dvuO7PQXguBlSkU6lP8=

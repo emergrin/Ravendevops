@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: my-react-app
+data:
+  APP_ENV: "devel"
+  APP_LOG_LEVEL: "info"
+   ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: my-react-app
+data:
+  DB_HOST: "mysql.evilcorp.local"
+  DB_PORT: "3306"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: opsearch-config
+  namespace: my-react-app
+data:
+  DB_HOST: "op.evilcorp.local"
+  DB_PORT: "9200"
